@@ -1,0 +1,25 @@
+{
+  "name": "cmc-playwright",
+  "version": "1.0.0",
+  "description": "CMC Power BI Playwright automation — SIT & PPT environments",
+  "scripts": {
+    "test:sit": "ENV=sit  npx playwright test --project=SIT",
+    "test:ppt": "ENV=ppt  npx playwright test --project=PPT",
+    "test:sit:ws": "ENV=sit  npx playwright test workspaces --project=SIT",
+    "test:sit:stab": "ENV=sit  npx playwright test stability-dashboard --project=SIT",
+    "test:sit:doc": "ENV=sit  npx playwright test document-dashboard --project=SIT",
+    "test:ppt:ws": "ENV=ppt  npx playwright test workspaces --project=PPT",
+    "test:ppt:stab": "ENV=ppt  npx playwright test stability-dashboard --project=PPT",
+    "test:ppt:doc": "ENV=ppt  npx playwright test document-dashboard --project=PPT",
+    "test:all": "npm run test:sit && npm run test:ppt",
+    "report": "npx playwright show-report",
+    "auth:sit": "node scripts/save-auth.js",
+    "auth:ppt": "node scripts/save-auth.js --env ppt"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "dotenv": "^16.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.0.0"
+  }
+}
