@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git config *)",
+      "Bash(pip list *)",
+      "Bash(Remove-Item -Recurse -Force \"c:/Users/PRAWIN/VS-code-repo/practise_project_v1/venv\")"
+    ]
+  }
+}

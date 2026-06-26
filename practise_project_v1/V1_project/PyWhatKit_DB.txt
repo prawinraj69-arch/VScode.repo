@@ -1,0 +1,20 @@
+Date: 10/4/2026
+Time: 13:10
+Group ID: https://chat.whatsapp.com/KyfcOL55tcKB2JopHl6tVn
+Message: .
+--------------------
+Date: 16/4/2026
+Time: 8:37
+Group ID: https://chat.whatsapp.com/KyfcOL55tcKB2JopHl6tVn
+Message: this mess is sent by py code to test it, kindly ignore it.
+--------------------
+Date: 16/4/2026
+Time: 8:49
+Group ID: KyfcOL55tcKB2JopHl6tVn
+Message: hi, Good Morning
+--------------------
+Date: 16/4/2026
+Time: 9:2
+Group ID: KyfcOL55tcKB2JopHl6tVn
+Message: this message is sent by a python script. Do not worry, it's just a test message to demonstrate automation, Have a great day everyone!
+--------------------

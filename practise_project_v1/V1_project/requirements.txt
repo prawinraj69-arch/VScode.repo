@@ -1,0 +1,2 @@
+# Recommended: use Python 3.11 or 3.10 for pygame compatibility
+pygame
