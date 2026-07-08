@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Set-Location \"C:\\\\Users\\\\PRAWIN\\\\VS.code-repo\\\\VScode.repo\\\\CMC project\\\\cmc-playwright\"; $env:ENV='sit'; npx playwright test --grep \"TC03\" --project=SIT --workers=1)"
+    ]
+  }
+}
