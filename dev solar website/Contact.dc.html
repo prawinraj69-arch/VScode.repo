@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #14181d; background: #ffffff; -webkit-font-smoothing: antialiased; line-height: 1.6; }
+  a { color: #1a3a8f; text-decoration: none; }
+  a:hover { color: #12285f; }
+  input, select, textarea { font-family: inherit; }
+  input::placeholder, textarea::placeholder { color: #9aa3b0; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: #1a3a8f; box-shadow: 0 0 0 3px rgba(26,58,143,.12); }
+</style>
+</helmet>
+<div style="min-height:100vh;">
+
+  <!-- TOP BAR -->
+  <div style="background:#12285f; color:#cdd6ea; font-size:13px;">
+    <div style="max-width:1200px; margin:0 auto; padding:8px 32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+      <div style="display:flex; gap:22px; align-items:center; flex-wrap:wrap;">
+        <span style="display:flex; align-items:center; gap:7px;"><span style="width:6px;height:6px;background:#34a24a;border-radius:50%;display:inline-block;"></span>ISO 9001 · IEC · STQC Certified</span>
+        <span style="opacity:.6;">Manufacturing solar since 2011</span>
+      </div>
+      <div style="display:flex; gap:22px; align-items:center;">
+        <a href="tel:+919843179797" style="color:#cdd6ea;">+91 98431 79797</a>
+        <a href="mailto:dev@devsolar.com" style="color:#cdd6ea;">dev@devsolar.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header style="position:sticky; top:0; z-index:50; background:rgba(255,255,255,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e5e9ef;">
+    <div style="max-width:1200px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+      <a href="Dev Solar.dc.html" style="display:flex; align-items:center; gap:12px;">
+        <span style="display:flex; align-items:baseline; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:26px; letter-spacing:-1px; color:#1a3a8f;">
+          <span style="position:relative;">D<span style="position:absolute; left:-13px; top:6px; width:15px; height:9px; background:#34a24a; border-radius:0 100% 0 100%; transform:rotate(-18deg);"></span></span>EV<span style="color:#34a24a; margin-left:4px;">SOLAR</span>
+        </span>
+      </a>
+      <nav style="display:flex; align-items:center; gap:30px; font-size:15px; font-weight:500;">
+        <a href="Dev Solar.dc.html" style="color:#3a424d;">Home</a>
+        <a href="About.dc.html" style="color:#3a424d;">About</a>
+        <a href="Products.dc.html" style="color:#3a424d;">Products</a>
+        <a href="Gallery.dc.html" style="color:#3a424d;">Gallery</a>
+        <a href="Contact.dc.html" style="color:#1a3a8f; font-weight:600;">Contact</a>
+        <a href="#form" style="background:#1a3a8f; color:#fff; padding:10px 20px; border-radius:6px; font-weight:600;" style-hover="background:#12285f;">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section style="background:linear-gradient(120deg,#0f2555,#1a3a8f); color:#fff; position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; opacity:.08; background-image:radial-gradient(circle at 1px 1px,#fff 1px,transparent 0); background-size:26px 26px;"></div>
+    <div style="position:relative; max-width:1200px; margin:0 auto; padding:64px 32px 68px;">
+      <div style="font-size:13px; color:#9fb0d4; letter-spacing:.4px; margin-bottom:14px;"><a href="Dev Solar.dc.html" style="color:#9fb0d4;">Home</a> / Contact</div>
+      <h1 style="font-family:'Space Grotesk',sans-serif; font-size:52px; font-weight:700; letter-spacing:-1.5px; margin-bottom:16px;">Let's talk solar</h1>
+      <p style="font-size:19px; color:#c9d3ea; max-width:600px;">Tell us about your site and requirement — our team will get back with a tailored quote.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT CARDS -->
+  <section style="max-width:1200px; margin:0 auto; padding:64px 32px 20px;">
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+      <sc-for list="{{ cards }}" as="c" hint-placeholder-count="3">
+        <div style="border:1px solid #e5e9ef; border-radius:14px; padding:28px 26px; background:#fff;">
+          <div style="width:44px; height:44px; border-radius:11px; background:#eaf1ff; display:flex; align-items:center; justify-content:center; margin-bottom:16px;"><span style="width:15px; height:15px; background:#1a3a8f; border-radius:{{ c.shape }};"></span></div>
+          <h3 style="font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:600; margin-bottom:8px; color:#8791a0; text-transform:uppercase; letter-spacing:.5px;">{{ c.label }}</h3>
+          <div style="font-size:16px; color:#14181d; line-height:1.7;">{{ c.body }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FORM + INFO -->
+  <section id="form" style="max-width:1200px; margin:0 auto; padding:48px 32px 84px;">
+    <div style="display:grid; grid-template-columns:1.1fr .9fr; gap:44px; align-items:start;">
+      <div style="border:1px solid #e5e9ef; border-radius:18px; padding:38px; background:#fff; box-shadow:0 14px 34px rgba(15,37,85,.06);">
+        <h2 style="font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700; letter-spacing:-.6px; margin-bottom:8px;">Request a quote</h2>
+        <p style="font-size:15px; color:#5b6470; margin-bottom:26px;">Fill in the form and we'll respond within one business day.</p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div style="display:flex; flex-direction:column; gap:7px;">
+            <label style="font-size:13.5px; font-weight:600; color:#3f4854;">Full name</label>
+            <input type="text" placeholder="Your name" style="padding:12px 14px; border:1px solid #d7dde7; border-radius:8px; font-size:15px; transition:.15s;">
+          </div>
+          <div style="display:flex; flex-direction:column; gap:7px;">
+            <label style="font-size:13.5px; font-weight:600; color:#3f4854;">Phone</label>
+            <input type="tel" placeholder="+91 ..." style="padding:12px 14px; border:1px solid #d7dde7; border-radius:8px; font-size:15px; transition:.15s;">
+          </div>
+          <div style="display:flex; flex-direction:column; gap:7px;">
+            <label style="font-size:13.5px; font-weight:600; color:#3f4854;">Email</label>
+            <input type="email" placeholder="you@email.com" style="padding:12px 14px; border:1px solid #d7dde7; border-radius:8px; font-size:15px; transition:.15s;">
+          </div>
+          <div style="display:flex; flex-direction:column; gap:7px;">
+            <label style="font-size:13.5px; font-weight:600; color:#3f4854;">Interested in</label>
+            <select style="padding:12px 14px; border:1px solid #d7dde7; border-radius:8px; font-size:15px; background:#fff; transition:.15s;">
+              <option>Solar Modules</option>
+              <option>On-Grid System</option>
+              <option>Off-Grid System</option>
+              <option>Solar Pumping</option>
+              <option>Street Lights</option>
+              <option>Water Heater</option>
+              <option>MW Power Plant</option>
+              <option>Wet Grinder</option>
+            </select>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:7px; margin-top:16px;">
+          <label style="font-size:13.5px; font-weight:600; color:#3f4854;">Message</label>
+          <textarea rows="4" placeholder="Tell us about your site, load / area and requirement..." style="padding:12px 14px; border:1px solid #d7dde7; border-radius:8px; font-size:15px; resize:vertical; transition:.15s;"></textarea>
+        </div>
+        <button style="margin-top:22px; width:100%; background:#34a24a; color:#fff; border:none; padding:15px; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; font-family:'Space Grotesk',sans-serif;" style-hover="background:#2b8b3e;">Send enquiry →</button>
+        <p style="font-size:13px; color:#8791a0; text-align:center; margin-top:14px;">Prefer to talk? Call <a href="tel:+919843179797">+91 98431 79797</a> or <a href="https://wa.me/919843179797">WhatsApp us</a>.</p>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div style="border:1px solid #e5e9ef; border-radius:16px; overflow:hidden;">
+          <iframe title="Dev Solar location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15660.727382566347!2d77.01920026587042!3d11.099821185868958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f836f287832b%3A0x8de035a691deca2f!2sDev+Solar!5e0!3m2!1sen!2sin!4v1429523558484" style="width:100%; height:280px; border:0; display:block;" loading="lazy"></iframe>
+        </div>
+        <div style="border:1px solid #e5e9ef; border-radius:16px; padding:28px; background:#f5f7fa;">
+          <h3 style="font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:600; margin-bottom:16px;">Dev Solar · Dev International</h3>
+          <div style="display:flex; flex-direction:column; gap:14px; font-size:15px; color:#3f4854;">
+            <div><div style="font-size:12.5px; font-weight:600; color:#8791a0; text-transform:uppercase; letter-spacing:.5px; margin-bottom:3px;">Address</div>15, Doctor Thottam, Kalapatti – Kurumbapalayam Road, Coimbatore – 641 048, Tamil Nadu, India</div>
+            <div><div style="font-size:12.5px; font-weight:600; color:#8791a0; text-transform:uppercase; letter-spacing:.5px; margin-bottom:3px;">Phone</div><a href="tel:+919843179797">+91 98431 79797</a> · <a href="tel:+918870445566">+91 88704 45566</a></div>
+            <div><div style="font-size:12.5px; font-weight:600; color:#8791a0; text-transform:uppercase; letter-spacing:.5px; margin-bottom:3px;">Email</div><a href="mailto:dev@devsolar.com">dev@devsolar.com</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0b1d40; color:#a9b6d4; font-size:14.5px;">
+    <div style="max-width:1200px; margin:0 auto; padding:64px 32px 30px; display:grid; grid-template-columns:1.5fr 1fr 1fr 1.3fr; gap:40px;">
+      <div>
+        <span style="display:flex; align-items:baseline; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:24px; letter-spacing:-1px; color:#fff; margin-bottom:14px;">
+          <span style="position:relative;">D<span style="position:absolute; left:-12px; top:5px; width:14px; height:8px; background:#34a24a; border-radius:0 100% 0 100%; transform:rotate(-18deg);"></span></span>EV<span style="color:#4fbf65; margin-left:4px;">SOLAR</span>
+        </span>
+        <p style="line-height:1.6; margin-bottom:8px;">A vertically integrated solar manufacturer contributing towards reduction of global warming through eco-friendly photovoltaic technology.</p>
+        <p style="font-size:13px; color:#7e8db0;">A unit of Dev International</p>
+      </div>
+      <div>
+        <h4 style="color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; margin-bottom:16px;">Products</h4>
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <a href="Products.dc.html" style="color:#a9b6d4;">Solar Modules</a>
+          <a href="Products.dc.html" style="color:#a9b6d4;">On-Grid Systems</a>
+          <a href="Products.dc.html" style="color:#a9b6d4;">Off-Grid Systems</a>
+          <a href="Products.dc.html" style="color:#a9b6d4;">Solar Pumping</a>
+          <a href="Products.dc.html" style="color:#a9b6d4;">Street Lights</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; margin-bottom:16px;">Company</h4>
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <a href="About.dc.html" style="color:#a9b6d4;">About Us</a>
+          <a href="About.dc.html" style="color:#a9b6d4;">Infrastructure</a>
+          <a href="About.dc.html" style="color:#a9b6d4;">Certificates</a>
+          <a href="Contact.dc.html" style="color:#a9b6d4;">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; margin-bottom:16px;">Get in touch</h4>
+        <p style="line-height:1.6; margin-bottom:12px;">15, Doctor Thottam,<br>Kalapatti – Kurumbapalayam Road,<br>Coimbatore – 641 048, Tamil Nadu</p>
+        <p style="margin-bottom:5px;"><a href="tel:+919843179797" style="color:#4fbf65;">+91 98431 79797</a></p>
+        <p><a href="mailto:dev@devsolar.com" style="color:#4fbf65;">dev@devsolar.com</a></p>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.1);">
+      <div style="max-width:1200px; margin:0 auto; padding:20px 32px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:13px; color:#6c7ba0;">
+        <span>© 2026 Dev Solar. All rights reserved.</span>
+        <span>Dependence. Excellence. Values.</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      cards: [
+        { shape:'50% 50% 50% 0', label:'Visit us', body:'15, Doctor Thottam, Kalapatti – Kurumbapalayam Road, Coimbatore – 641 048' },
+        { shape:'50%', label:'Call us', body:'+91 98431 79797<br>+91 88704 45566' },
+        { shape:'3px', label:'Email us', body:'dev@devsolar.com<br>www.devsolar.com' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

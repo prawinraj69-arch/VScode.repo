@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #14181d; background: #ffffff; -webkit-font-smoothing: antialiased; line-height: 1.6; }
+  a { color: #1a3a8f; text-decoration: none; }
+  a:hover { color: #12285f; }
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes glow { 0%,100% { opacity:.45; transform:scale(1); } 50% { opacity:.8; transform:scale(1.12); } }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(26px); } to { opacity:1; transform:translateY(0); } }
+  [data-reveal] { opacity:0; }
+  [data-reveal].in { animation: fadeUp .7s cubic-bezier(.22,.61,.36,1) forwards; }
+</style>
+</helmet>
+<div style="min-height:100vh;">
+
+  <!-- ===== TOP BAR ===== -->
+  <div style="background:#12285f; color:#cdd6ea; font-size:13px;">
+    <div style="max-width:1200px; margin:0 auto; padding:8px 32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+      <div style="display:flex; gap:22px; align-items:center; flex-wrap:wrap;">
+        <span style="display:flex; align-items:center; gap:7px;"><span style="width:6px;height:6px;background:#34a24a;border-radius:50%;display:inline-block;"></span>ISO 9001 · IEC · STQC Certified</span>
+        <span style="opacity:.6;">Manufacturing solar since 2011</span>
+      </div>
+      <div style="display:flex; gap:22px; align-items:center;">
+        <a href="tel:+919843179797" style="color:#cdd6ea;">+91 98431 79797</a>
+        <a href="mailto:dev@devsolar.com" style="color:#cdd6ea;">dev@devsolar.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header style="position:sticky; top:0; z-index:50; background:rgba(255,255,255,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e5e9ef;">
+    <div style="max-width:1200px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+      <a href="Dev Solar.dc.html" style="display:flex; align-items:center; gap:12px;">
+        <span style="display:flex; align-items:baseline; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:26px; letter-spacing:-1px; color:#1a3a8f;">
+          <span style="position:relative;">D<span style="position:absolute; left:-13px; top:6px; width:15px; height:9px; background:#34a24a; border-radius:0 100% 0 100%; transform:rotate(-18deg);"></span></span>EV
+          <span style="color:#34a24a; margin-left:4px;">SOLAR</span>
+        </span>
+      </a>
+      <nav style="display:flex; align-items:center; gap:30px; font-size:15px; font-weight:500;">
+        <a href="Dev Solar.dc.html" style="color:#1a3a8f; font-weight:600;">Home</a>
+        <a href="About.dc.html" style="color:#3a424d;">About</a>
+        <a href="Products.dc.html" style="color:#3a424d;">Products</a>
+        <a href="Gallery.dc.html" style="color:#3a424d;">Gallery</a>
+        <a href="Contact.dc.html" style="color:#3a424d;">Contact</a>
+        <a href="Contact.dc.html" style="background:#1a3a8f; color:#fff; padding:10px 20px; border-radius:6px; font-weight:600;" style-hover="background:#12285f;">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section style="position:relative; background:linear-gradient(120deg,#0f2555 0%,#1a3a8f 55%,#234bb0 100%); color:#fff; overflow:hidden;">
+    <div style="position:absolute; inset:0; opacity:.09; background-image:radial-gradient(circle at 1px 1px,#fff 1px,transparent 0); background-size:26px 26px;"></div>
+    <div style="position:absolute; top:-120px; right:-80px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle,rgba(52,162,74,.5),transparent 70%); animation:glow 7s ease-in-out infinite;"></div>
+    <div style="position:relative; max-width:1200px; margin:0 auto; padding:84px 32px 92px; display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:9px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.22); padding:7px 15px; border-radius:100px; font-size:13px; font-weight:500; letter-spacing:.3px; margin-bottom:26px;">
+          <span style="width:7px;height:7px;background:#34a24a;border-radius:50%;"></span> Enlisted by TEDA &amp; MNRE
+        </div>
+        <h1 style="font-family:'Space Grotesk',sans-serif; font-size:56px; line-height:1.05; font-weight:700; letter-spacing:-1.5px; margin-bottom:22px;">Powering a self-reliant tomorrow with solar</h1>
+        <p style="font-size:19px; line-height:1.55; color:#c9d3ea; max-width:520px; margin-bottom:34px;">A vertically integrated solar manufacturer from Coimbatore — from PV modules to megawatt power plants, agricultural pumping and rooftop systems.</p>
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="Contact.dc.html" style="background:#34a24a; color:#fff; padding:15px 28px; border-radius:7px; font-weight:600; font-size:16px;" style-hover="background:#2b8b3e;">Request a Quote →</a>
+          <a href="tel:+919843179797" style="background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.3); color:#fff; padding:15px 28px; border-radius:7px; font-weight:600; font-size:16px;" style-hover="background:rgba(255,255,255,.18);">Call +91 98431 79797</a>
+        </div>
+        <div style="display:flex; gap:36px; margin-top:46px; flex-wrap:wrap;">
+          <div><div style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700;">2011</div><div style="font-size:13px; color:#9fb0d4; letter-spacing:.3px;">ESTABLISHED</div></div>
+          <div><div style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700;">10 MW</div><div style="font-size:13px; color:#9fb0d4; letter-spacing:.3px;">MODULES / YEAR</div></div>
+          <div><div style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700;">2 MW+</div><div style="font-size:13px; color:#9fb0d4; letter-spacing:.3px;">PLANTS DELIVERED</div></div>
+        </div>
+      </div>
+      <div style="position:relative;">
+        <div style="border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.2); box-shadow:0 30px 60px rgba(0,0,0,.35); aspect-ratio:4/5; background:#dfe6f2;">
+          <img src="https://devsolar.com/img/sliders/2MW-Solar-Power-Plant.jpg" alt="Dev Solar 2 MW solar power plant" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+        <div style="position:absolute; bottom:-24px; left:-24px; background:#fff; color:#14181d; padding:18px 22px; border-radius:12px; box-shadow:0 18px 40px rgba(0,0,0,.2); display:flex; align-items:center; gap:14px; animation:floaty 5s ease-in-out infinite;">
+          <div style="width:42px;height:42px;border-radius:10px;background:#eaf4ec;display:flex;align-items:center;justify-content:center;"><span style="width:16px;height:16px;background:#34a24a;border-radius:0 100% 0 100%;transform:rotate(-18deg);"></span></div>
+          <div><div style="font-weight:700; font-size:15px;">Clean energy</div><div style="font-size:13px; color:#5b6470;">Zero fuel. Zero emissions.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST STRIP ===== -->
+  <section style="background:#f5f7fa; border-bottom:1px solid #e5e9ef;">
+    <div style="max-width:1200px; margin:0 auto; padding:26px 32px; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;">
+      <span style="font-size:13px; font-weight:600; letter-spacing:1px; color:#8791a0; text-transform:uppercase;">Certified &amp; Approved by</span>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <sc-for list="{{ certs }}" as="c" hint-placeholder-count="5">
+          <span style="background:#fff; border:1px solid #e0e5ee; padding:10px 20px; border-radius:8px; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px; color:#1a3a8f;">{{ c }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section data-reveal style="max-width:1200px; margin:0 auto; padding:90px 32px;">
+    <div style="text-align:center; max-width:640px; margin:0 auto 52px;">
+      <span style="font-size:13px; font-weight:600; letter-spacing:1.5px; color:#34a24a; text-transform:uppercase;">Our Product Range</span>
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-size:42px; font-weight:700; letter-spacing:-1px; margin:12px 0 14px; color:#14181d;">End-to-end solar solutions</h2>
+      <p style="font-size:17px; color:#5b6470;">From the photovoltaic cell to fully commissioned power plants — engineered, manufactured and installed in-house.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:22px;">
+      <sc-for list="{{ products }}" as="p" hint-placeholder-count="8">
+        <a href="Products.dc.html" style="border:1px solid #e5e9ef; border-radius:14px; overflow:hidden; background:#fff; display:block; transition:.2s;" style-hover="border-color:#1a3a8f; box-shadow:0 14px 30px rgba(26,58,143,.12); transform:translateY(-3px);">
+          <div style="aspect-ratio:16/11; overflow:hidden; background:#eef1f6;">
+            <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease;" style-hover="transform:scale(1.06);">
+          </div>
+          <div style="padding:18px 18px 20px;">
+            <h3 style="font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:600; color:#14181d; margin-bottom:6px;">{{ p.name }}</h3>
+            <p style="font-size:13.5px; color:#5b6470; line-height:1.5;">{{ p.desc }}</p>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ===== VALUES (Dependence. Excellence. Values.) ===== -->
+  <section style="background:#0f2555; color:#fff; position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; opacity:.06; background-image:radial-gradient(circle at 1px 1px,#fff 1px,transparent 0); background-size:26px 26px;"></div>
+    <div style="position:relative; max-width:1200px; margin:0 auto; padding:82px 32px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+        <div>
+          <span style="font-size:13px; font-weight:600; letter-spacing:1.5px; color:#7fd68f; text-transform:uppercase;">Why Dev Solar</span>
+          <h2 style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; letter-spacing:-1px; margin:12px 0 18px;">Dependence. Excellence. Values.</h2>
+          <p style="font-size:17px; color:#c1cce4; line-height:1.6; margin-bottom:12px;">More than a tagline — it's how we've built a vertically integrated facility that controls quality from the cell upward, delivering solar that our customers can rely on for decades.</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <sc-for list="{{ values }}" as="v" hint-placeholder-count="3">
+            <div style="display:flex; gap:18px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); padding:22px 24px; border-radius:12px;">
+              <div style="flex-shrink:0; width:48px; height:48px; border-radius:11px; background:rgba(52,162,74,.2); border:1px solid rgba(52,162,74,.4); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#7fd68f; font-size:19px;">{{ v.n }}</div>
+              <div><h3 style="font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:600; margin-bottom:4px;">{{ v.t }}</h3><p style="font-size:14.5px; color:#b7c2dc; line-height:1.5;">{{ v.d }}</p></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== APPLICATIONS ===== -->
+  <section data-reveal style="max-width:1200px; margin:0 auto; padding:90px 32px;">
+    <div style="max-width:640px; margin:0 auto 48px; text-align:center;">
+      <span style="font-size:13px; font-weight:600; letter-spacing:1.5px; color:#34a24a; text-transform:uppercase;">Who We Serve</span>
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-size:42px; font-weight:700; letter-spacing:-1px; margin:12px 0 14px;">Solar for every scale</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px;">
+      <sc-for list="{{ audiences }}" as="a" hint-placeholder-count="4">
+        <div style="border:1px solid #e5e9ef; border-radius:14px; padding:26px 24px; background:#fff;">
+          <div style="width:46px; height:46px; border-radius:12px; background:#eaf1ff; display:flex; align-items:center; justify-content:center; margin-bottom:16px;"><span style="width:16px; height:16px; background:#1a3a8f; border-radius:{{ a.shape }};"></span></div>
+          <h3 style="font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:600; margin-bottom:7px;">{{ a.t }}</h3>
+          <p style="font-size:14px; color:#5b6470; line-height:1.55;">{{ a.d }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ===== VIDEO FEATURE ===== -->
+  <section data-reveal style="background:#f5f7fa; border-top:1px solid #e5e9ef; border-bottom:1px solid #e5e9ef;">
+    <div style="max-width:1200px; margin:0 auto; padding:82px 32px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
+      <div>
+        <span style="font-size:13px; font-weight:600; letter-spacing:1.5px; color:#34a24a; text-transform:uppercase;">See it in action</span>
+        <h2 style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; letter-spacing:-1px; margin:12px 0 16px;">Solar that pays for itself</h2>
+        <p style="font-size:17px; color:#3f4854; margin-bottom:22px;">In India we get bright sunshine more than 350 days a year — and a 1 kW system harvests around 5 units of power on a good day. Our panels are built to last 25 years, still running at ~80% efficiency at the end.</p>
+        <div style="display:flex; gap:30px; flex-wrap:wrap; margin-bottom:28px;">
+          <div><div style="font-family:'Space Grotesk',sans-serif; font-size:28px; font-weight:700; color:#1a3a8f;">350+</div><div style="font-size:13px; color:#5b6470;">SUNNY DAYS / YEAR</div></div>
+          <div><div style="font-family:'Space Grotesk',sans-serif; font-size:28px; font-weight:700; color:#1a3a8f;">5 units</div><div style="font-size:13px; color:#5b6470;">PER kW / DAY</div></div>
+          <div><div style="font-family:'Space Grotesk',sans-serif; font-size:28px; font-weight:700; color:#1a3a8f;">25 yrs</div><div style="font-size:13px; color:#5b6470;">PANEL LIFESPAN</div></div>
+        </div>
+        <a href="Gallery.dc.html" style="display:inline-block; background:#1a3a8f; color:#fff; padding:14px 26px; border-radius:7px; font-weight:600; font-size:15px;" style-hover="background:#12285f;">Watch more videos →</a>
+      </div>
+      <div style="position:relative; border-radius:16px; overflow:hidden; border:1px solid #e0e5ee; box-shadow:0 20px 44px rgba(15,37,85,.14); aspect-ratio:16/9; background:#0f2555;">
+        <sc-if value="{{ heroPlaying }}" hint-placeholder-val="{{ false }}">
+          <iframe src="https://www.youtube-nocookie.com/embed/ysOUGLoVe4w?autoplay=1&rel=0" title="Dev Solar Corporate Film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%; height:100%; border:0; display:block;"></iframe>
+        </sc-if>
+        <sc-if value="{{ heroIdle }}" hint-placeholder-val="{{ true }}">
+          <div onClick="{{ playHero }}" style="position:absolute; inset:0; cursor:pointer;">
+            <img src="https://img.youtube.com/vi/ysOUGLoVe4w/hqdefault.jpg" alt="Dev Solar Corporate Film" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <div style="position:absolute; inset:0; background:linear-gradient(to top,rgba(15,37,85,.5),rgba(15,37,85,.15)); display:flex; align-items:center; justify-content:center;">
+              <span style="width:66px; height:66px; border-radius:50%; background:rgba(255,255,255,.94); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,.35);">
+                <span style="width:0; height:0; border-left:20px solid #1a3a8f; border-top:13px solid transparent; border-bottom:13px solid transparent; margin-left:5px;"></span>
+              </span>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BAND ===== -->
+  <section data-reveal style="background:linear-gradient(115deg,#34a24a,#25863a); color:#fff;">
+    <div style="max-width:1200px; margin:0 auto; padding:60px 32px; display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap;">
+      <div>
+        <h2 style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; letter-spacing:-.8px; margin-bottom:8px;">Ready to switch to solar?</h2>
+        <p style="font-size:17px; color:#e3f4e7;">Get a free site assessment and a tailored quote from our engineers.</p>
+      </div>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="Contact.dc.html" style="background:#fff; color:#1f7a33; padding:15px 28px; border-radius:7px; font-weight:700; font-size:16px;" style-hover="background:#f0f0f0;">Request a Quote</a>
+        <a href="https://wa.me/919843179797" style="background:rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.4); color:#fff; padding:15px 28px; border-radius:7px; font-weight:600; font-size:16px;" style-hover="background:rgba(0,0,0,.3);">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="background:#0b1d40; color:#a9b6d4; font-size:14.5px;">
+    <div style="max-width:1200px; margin:0 auto; padding:64px 32px 30px; display:grid; grid-template-columns:1.5fr 1fr 1fr 1.3fr; gap:40px;">
+      <div>
+        <span style="display:flex; align-items:baseline; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:24px; letter-spacing:-1px; color:#fff; margin-bottom:14px;">
+          <span style="position:relative;">D<span style="position:absolute; left:-12px; top:5px; width:14px; height:8px; background:#34a24a; border-radius:0 100% 0 100%; transform:rotate(-18deg);"></span></span>EV<span style="color:#4fbf65; margin-left:4px;">SOLAR</span>
+        </span>
+        <p style="line-height:1.6; margin-bottom:8px;">A vertically integrated solar manufacturer contributing towards reduction of global warming through eco-friendly photovoltaic technology.</p>
+        <p style="font-size:13px; color:#7e8db0;">A unit of Dev International</p>
+      </div>
+      <div>
+        <h4 style="color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; margin-bottom:16px;">Products</h4>
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <a href="Products.dc.html" style="color:#a9b6d4;">Solar Modules</a>
+          <a href="Products.dc.html" style="color:#a9b6d4;">On-Grid Systems</a>
+          <a href="Products.dc.html" style="color:#a9b6d4;">Off-Grid Systems</a>
+          <a href="Products.dc.html" style="color:#a9b6d4;">Solar Pumping</a>
+          <a href="Products.dc.html" style="color:#a9b6d4;">Street Lights</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; margin-bottom:16px;">Company</h4>
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <a href="About.dc.html" style="color:#a9b6d4;">About Us</a>
+          <a href="About.dc.html" style="color:#a9b6d4;">Infrastructure</a>
+          <a href="About.dc.html" style="color:#a9b6d4;">Certificates</a>
+          <a href="Contact.dc.html" style="color:#a9b6d4;">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; margin-bottom:16px;">Get in touch</h4>
+        <p style="line-height:1.6; margin-bottom:12px;">15, Doctor Thottam,<br>Kalapatti – Kurumbapalayam Road,<br>Coimbatore – 641 048, Tamil Nadu</p>
+        <p style="margin-bottom:5px;"><a href="tel:+919843179797" style="color:#4fbf65;">+91 98431 79797</a></p>
+        <p><a href="mailto:dev@devsolar.com" style="color:#4fbf65;">dev@devsolar.com</a></p>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.1);">
+      <div style="max-width:1200px; margin:0 auto; padding:20px 32px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:13px; color:#6c7ba0;">
+        <span>© 2026 Dev Solar. All rights reserved.</span>
+        <span>Dependence. Excellence. Values.</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  state = { heroPlaying: false };
+  componentDidMount() {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    requestAnimationFrame(() => document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el)));
+  }
+  renderVals() {
+    return {
+      heroPlaying: this.state.heroPlaying,
+      heroIdle: !this.state.heroPlaying,
+      playHero: () => this.setState({ heroPlaying: true }),
+      certs: ['ISO 9001', 'IEC', 'STQC', 'TEDA', 'MNRE'],
+      products: [
+        { name: 'Solar Modules', desc: 'PV modules from 3W to 300W, 6V–24V — tailor-made to end application.', img: 'https://devsolar.com/img/solar-modules-1.jpg' },
+        { name: 'On-Grid Systems', desc: 'Grid-tied rooftop & utility systems that feed clean power back to the grid.', img: 'https://devsolar.com/img/sliders/slider-10kw-ongrid.jpg' },
+        { name: 'Off-Grid Systems', desc: 'Battery-backed independence for homes, hospitals and data centers.', img: 'https://devsolar.com/img/solar-power-plants.jpg' },
+        { name: 'Solar Pumping', desc: 'Daytime irrigation pumping for agriculture — no diesel, no grid.', img: 'https://devsolar.com/img/solar-agri-pumping.jpg' },
+        { name: 'Solar Street Lights', desc: 'Standalone LED street lighting for roads, campuses and villages.', img: 'https://devsolar.com/img/sliders/slide-3-domestic-rooftop.png' },
+        { name: 'Solar Water Heater', desc: 'Efficient hot water for homes and industry, powered by the sun.', img: 'https://devsolar.com/img/no-fuel.jpg' },
+        { name: 'MW Power Plants', desc: 'Design, build and commission of utility-scale megawatt plants.', img: 'https://devsolar.com/img/sliders/2MW-Solar-Power-Plant-2.jpg' },
+        { name: 'Wet Grinders', desc: 'Durable domestic wet grinders — a trusted Coimbatore product line.', img: 'https://devsolar.com/img/solar-modules-2.jpg' },
+      ],
+      values: [
+        { n: 'D', t: 'Dependence', d: 'Systems engineered to run reliably for 25+ years in Indian conditions.' },
+        { n: 'E', t: 'Excellence', d: 'In-house manufacturing to international standards, cell to commissioning.' },
+        { n: 'V', t: 'Values', d: 'A green methodology that conserves energy and protects the environment.' },
+      ],
+      audiences: [
+        { t: 'Homeowners', d: 'Rooftop on-grid & off-grid systems that cut your electricity bill.', shape: '50%' },
+        { t: 'Farmers', d: 'Solar pumping that runs your irrigation through the sunny hours.', shape: '3px' },
+        { t: 'Commercial', d: 'Industrial rooftops and captive plants that lower operating costs.', shape: '2px 8px' },
+        { t: 'Government', d: 'Institutional, utility and tactical projects at megawatt scale.', shape: '50% 0' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #14181d; background: #ffffff; -webkit-font-smoothing: antialiased; line-height: 1.6; }
+  a { color: #1a3a8f; text-decoration: none; }
+  a:hover { color: #12285f; }
+</style>
+</helmet>
+<div style="min-height:100vh;">
+
+  <!-- TOP BAR -->
+  <div style="background:#12285f; color:#cdd6ea; font-size:13px;">
+    <div style="max-width:1200px; margin:0 auto; padding:8px 32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+      <div style="display:flex; gap:22px; align-items:center; flex-wrap:wrap;">
+        <span style="display:flex; align-items:center; gap:7px;"><span style="width:6px;height:6px;background:#34a24a;border-radius:50%;display:inline-block;"></span>ISO 9001 · IEC · STQC Certified</span>
+        <span style="opacity:.6;">Manufacturing solar since 2011</span>
+      </div>
+      <div style="display:flex; gap:22px; align-items:center;">
+        <a href="tel:+919843179797" style="color:#cdd6ea;">+91 98431 79797</a>
+        <a href="mailto:dev@devsolar.com" style="color:#cdd6ea;">dev@devsolar.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header style="position:sticky; top:0; z-index:50; background:rgba(255,255,255,.92); backdrop-filter:blur(10px); border-bottom:1px solid #e5e9ef;">
+    <div style="max-width:1200px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+      <a href="Dev Solar.dc.html" style="display:flex; align-items:center; gap:12px;">
+        <span style="display:flex; align-items:baseline; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:26px; letter-spacing:-1px; color:#1a3a8f;">
+          <span style="position:relative;">D<span style="position:absolute; left:-13px; top:6px; width:15px; height:9px; background:#34a24a; border-radius:0 100% 0 100%; transform:rotate(-18deg);"></span></span>EV<span style="color:#34a24a; margin-left:4px;">SOLAR</span>
+        </span>
+      </a>
+      <nav style="display:flex; align-items:center; gap:30px; font-size:15px; font-weight:500;">
+        <a href="Dev Solar.dc.html" style="color:#3a424d;">Home</a>
+        <a href="About.dc.html" style="color:#3a424d;">About</a>
+        <a href="Products.dc.html" style="color:#1a3a8f; font-weight:600;">Products</a>
+        <a href="Gallery.dc.html" style="color:#3a424d;">Gallery</a>
+        <a href="Contact.dc.html" style="color:#3a424d;">Contact</a>
+        <a href="Contact.dc.html" style="background:#1a3a8f; color:#fff; padding:10px 20px; border-radius:6px; font-weight:600;" style-hover="background:#12285f;">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section style="background:linear-gradient(120deg,#0f2555,#1a3a8f); color:#fff; position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; opacity:.08; background-image:radial-gradient(circle at 1px 1px,#fff 1px,transparent 0); background-size:26px 26px;"></div>
+    <div style="position:relative; max-width:1200px; margin:0 auto; padding:64px 32px 68px;">
+      <div style="font-size:13px; color:#9fb0d4; letter-spacing:.4px; margin-bottom:14px;"><a href="Dev Solar.dc.html" style="color:#9fb0d4;">Home</a> / Products</div>
+      <h1 style="font-family:'Space Grotesk',sans-serif; font-size:52px; font-weight:700; letter-spacing:-1.5px; margin-bottom:16px;">Our product range</h1>
+      <p style="font-size:19px; color:#c9d3ea; max-width:660px;">From the photovoltaic cell to complete megawatt plants — manufactured, integrated and installed in-house.</p>
+    </div>
+  </section>
+
+  <!-- PRODUCT ROWS -->
+  <section style="max-width:1200px; margin:0 auto; padding:80px 32px 40px; display:flex; flex-direction:column; gap:32px;">
+    <sc-for list="{{ products }}" as="p" hint-placeholder-count="8">
+      <div id="{{ p.id }}" style="display:grid; grid-template-columns:{{ p.cols }}; gap:44px; align-items:center; border:1px solid #e5e9ef; border-radius:18px; padding:34px; background:#fff;">
+        <div style="order:{{ p.imgOrder }}; border-radius:12px; overflow:hidden; aspect-ratio:16/11; background:#eef1f6;">
+          <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease;" style-hover="transform:scale(1.05);">
+        </div>
+        <div>
+          <div style="display:inline-block; font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:600; letter-spacing:1px; color:#34a24a; background:#eaf4ec; padding:5px 12px; border-radius:100px; margin-bottom:14px;">{{ p.tag }}</div>
+          <h2 style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; letter-spacing:-.8px; margin-bottom:12px;">{{ p.name }}</h2>
+          <p style="font-size:16px; color:#3f4854; margin-bottom:18px;">{{ p.desc }}</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <sc-for list="{{ p.chips }}" as="chip" hint-placeholder-count="3">
+              <span style="font-size:13.5px; color:#1a3a8f; background:#eef2fb; border:1px solid #dde5f7; padding:6px 13px; border-radius:7px; font-weight:500;">{{ chip }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </sc-for>
+  </section>
+
+  <!-- MODULE SPEC TABLE -->
+  <section style="background:#f5f7fa; border-top:1px solid #e5e9ef; border-bottom:1px solid #e5e9ef;">
+    <div style="max-width:1200px; margin:0 auto; padding:72px 32px;">
+      <div style="max-width:640px; margin-bottom:36px;">
+        <span style="font-size:13px; font-weight:600; letter-spacing:1.5px; color:#34a24a; text-transform:uppercase;">Technical Data</span>
+        <h2 style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700; letter-spacing:-.8px; margin:12px 0 12px;">Solar module electrical characteristics</h2>
+        <p style="font-size:16px; color:#3f4854;">PV modules from 3W to 300W, 6V to 24V. Final configuration is tailor-made to each customer's requirement.</p>
+      </div>
+      <div style="overflow-x:auto; border:1px solid #e0e5ee; border-radius:14px; background:#fff;">
+        <table style="width:100%; border-collapse:collapse; font-size:14px; min-width:760px;">
+          <thead>
+            <tr style="background:#0f2555; color:#fff;">
+              <th style="text-align:left; padding:14px 18px; font-family:'Space Grotesk',sans-serif; font-weight:600;">Parameter</th>
+              <sc-for list="{{ specCols }}" as="c" hint-placeholder-count="8">
+                <th style="text-align:center; padding:14px 12px; font-family:'Space Grotesk',sans-serif; font-weight:600; white-space:nowrap;">{{ c }}</th>
+              </sc-for>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{ specRows }}" as="r" hint-placeholder-count="6">
+              <tr style="border-top:1px solid #eaeef4;" style-hover="background:#f7f9fc;">
+                <td style="padding:13px 18px; font-weight:600; color:#14181d; white-space:nowrap;">{{ r.label }}</td>
+                <sc-for list="{{ r.vals }}" as="v" hint-placeholder-count="8">
+                  <td style="text-align:center; padding:13px 12px; color:#3f4854;">{{ v }}</td>
+                </sc-for>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px; color:#8791a0; margin-top:14px;">Wp = Watt-peak. Values are indicative; contact us for the full datasheet of any configuration.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:linear-gradient(115deg,#34a24a,#25863a); color:#fff;">
+    <div style="max-width:1200px; margin:0 auto; padding:56px 32px; display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap;">
+      <div>
+        <h2 style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; letter-spacing:-.6px; margin-bottom:6px;">Not sure which system fits your site?</h2>
+        <p style="font-size:16px; color:#e3f4e7;">Our engineers will size it for you — free of charge.</p>
+      </div>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="Contact.dc.html" style="background:#fff; color:#1f7a33; padding:15px 28px; border-radius:7px; font-weight:700; font-size:16px;" style-hover="background:#f0f0f0;">Request a Quote</a>
+        <a href="https://wa.me/919843179797" style="background:rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.4); color:#fff; padding:15px 28px; border-radius:7px; font-weight:600; font-size:16px;" style-hover="background:rgba(0,0,0,.3);">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0b1d40; color:#a9b6d4; font-size:14.5px;">
+    <div style="max-width:1200px; margin:0 auto; padding:64px 32px 30px; display:grid; grid-template-columns:1.5fr 1fr 1fr 1.3fr; gap:40px;">
+      <div>
+        <span style="display:flex; align-items:baseline; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:24px; letter-spacing:-1px; color:#fff; margin-bottom:14px;">
+          <span style="position:relative;">D<span style="position:absolute; left:-12px; top:5px; width:14px; height:8px; background:#34a24a; border-radius:0 100% 0 100%; transform:rotate(-18deg);"></span></span>EV<span style="color:#4fbf65; margin-left:4px;">SOLAR</span>
+        </span>
+        <p style="line-height:1.6; margin-bottom:8px;">A vertically integrated solar manufacturer contributing towards reduction of global warming through eco-friendly photovoltaic technology.</p>
+        <p style="font-size:13px; color:#7e8db0;">A unit of Dev International</p>
+      </div>
+      <div>
+        <h4 style="color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; margin-bottom:16px;">Products</h4>
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <a href="#modules" style="color:#a9b6d4;">Solar Modules</a>
+          <a href="#ongrid" style="color:#a9b6d4;">On-Grid Systems</a>
+          <a href="#offgrid" style="color:#a9b6d4;">Off-Grid Systems</a>
+          <a href="#pumping" style="color:#a9b6d4;">Solar Pumping</a>
+          <a href="#street" style="color:#a9b6d4;">Street Lights</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; margin-bottom:16px;">Company</h4>
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <a href="About.dc.html" style="color:#a9b6d4;">About Us</a>
+          <a href="About.dc.html" style="color:#a9b6d4;">Infrastructure</a>
+          <a href="About.dc.html" style="color:#a9b6d4;">Certificates</a>
+          <a href="Contact.dc.html" style="color:#a9b6d4;">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; margin-bottom:16px;">Get in touch</h4>
+        <p style="line-height:1.6; margin-bottom:12px;">15, Doctor Thottam,<br>Kalapatti – Kurumbapalayam Road,<br>Coimbatore – 641 048, Tamil Nadu</p>
+        <p style="margin-bottom:5px;"><a href="tel:+919843179797" style="color:#4fbf65;">+91 98431 79797</a></p>
+        <p><a href="mailto:dev@devsolar.com" style="color:#4fbf65;">dev@devsolar.com</a></p>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.1);">
+      <div style="max-width:1200px; margin:0 auto; padding:20px 32px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:13px; color:#6c7ba0;">
+        <span>© 2026 Dev Solar. All rights reserved.</span>
+        <span>Dependence. Excellence. Values.</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const products = [
+      { id:'modules', tag:'PV MANUFACTURING', name:'Solar Modules', img:'https://devsolar.com/img/solar-modules-1.jpg', desc:"We produce PV modules from 6V to 24V, with capacity from 3W to 300W depending on end application. Every configuration is tailor-made to the individual customer's requirement.", chips:['3W – 300W','6V – 24V','60 & 72 cell'] },
+      { id:'ongrid', tag:'GRID-TIED', name:'Solar On-Grid Systems', img:'https://devsolar.com/img/sliders/slider-10kw-ongrid.jpg', desc:'Grid-connected rooftop and utility systems that offset your consumption and feed surplus clean power back to the grid — from domestic rooftops to 100 kW installations.', chips:['Domestic rooftop','Commercial','Net metering'] },
+      { id:'offgrid', tag:'BATTERY BACKED', name:'Solar Off-Grid Systems', img:'https://devsolar.com/img/sliders/slide-3-domestic-rooftop.png', desc:'Independent power for homes, hospitals, data centers and educational institutions — with battery storage for reliable supply through grid outages.', chips:['Homes & hospitals','Data centers','Battery storage'] },
+      { id:'pumping', tag:'AGRICULTURE', name:'Solar Pumping', img:'https://devsolar.com/img/solar-agri-pumping.jpg', desc:'Solar power is produced comfortably between 8 AM and 5 PM on a good sunny day, so your irrigation pump runs through the productive hours — no diesel, no grid dependence.', chips:['Agricultural','No fuel cost','Daytime run'] },
+      { id:'street', tag:'LIGHTING', name:'Solar Street Lights', img:'https://devsolar.com/img/solar-power-plants.jpg', desc:'Standalone solar LED street lighting for roads, campuses and villages — automatic dusk-to-dawn operation with no wiring or running cost.', chips:['LED','Dusk-to-dawn','Zero wiring'] },
+      { id:'heater', tag:'THERMAL', name:'Solar Water Heater', img:'https://devsolar.com/img/no-fuel.jpg', desc:'Efficient solar hot water for homes and industry, cutting electricity and fuel bills while delivering reliable hot water every day.', chips:['Domestic','Industrial','Fuel saving'] },
+      { id:'mw', tag:'UTILITY SCALE', name:'MW Power Plants', img:'https://devsolar.com/img/sliders/2MW-Solar-Power-Plant.jpg', desc:'Turnkey design, build and commissioning of utility-scale megawatt solar power plants — we have delivered a 2 MW plant near Coimbatore.', chips:['On-grid','Utility size','Turnkey EPC'] },
+      { id:'grinder', tag:'DOMESTIC', name:'Wet Grinders', img:'https://devsolar.com/img/solar-modules-2.jpg', desc:'Durable domestic wet grinders — a trusted product line from our Coimbatore manufacturing base, built to the same quality standards as our solar range.', chips:['Domestic','Durable','Coimbatore made'] },
+    ];
+    return {
+      products: products.map((p,i) => ({ ...p, cols: i%2===0 ? '.85fr 1.15fr' : '1.15fr .85fr', imgOrder: i%2===0 ? 0 : 1 })),
+      specCols: ['45 Wp','74 Wp','100 Wp','125 Wp','200 Wp','250 Wp','250 Wp','300 Wp'],
+      specRows: [
+        { label:'Number of Cells', vals:['72','72','72','72','72','72','60','72'] },
+        { label:'Maximum Power', vals:['45 W','74 W','100 W','125 W','200 W','250 W','250 W','300 W'] },
+        { label:'Open Circuit Voltage', vals:['21 V','21 V','21 V','21 V','21 V','42 V','36 V','43 V'] },
+        { label:'Short Circuit Current', vals:['2.6 A','4.2 A','5.8 A','7.1 A','5.7 A','7.6 A','8.6 A','8.6 A'] },
+        { label:'Maximum Voltage', vals:['18 V','18 V','18 V','18 V','18 V','36 V','30 V','36 V'] },
+        { label:'Maximum Current', vals:['2.5 A','4.1 A','5.6 A','6.9 A','5.6 A','7.1 A','8.25 A','8.4 A'] },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
