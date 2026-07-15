@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "PowerShell(Set-Location \"C:\\\\Users\\\\PRAWIN\\\\VS.code-repo\\\\VScode.repo\\\\CMC project\\\\cmc-playwright\"; $env:ENV='sit'; npx playwright test --grep \"TC03\" --project=SIT --workers=1)"
+      "PowerShell(Set-Location \"C:\\\\Users\\\\PRAWIN\\\\VS.code-repo\\\\VScode.repo\\\\CMC project\\\\cmc-playwright\"; $env:ENV='sit'; npx playwright test --grep \"TC03\" --project=SIT --workers=1)",
+      "Bash(ENV=sit npx playwright test document-dashboard --project=SIT -g \"TC01\" --workers=1)"
     ]
   }
 }
